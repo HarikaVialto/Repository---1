@@ -1,0 +1,21 @@
+function longestDupSubstring(s) {
+    let maxLength = 0;
+    let result = '';
+  
+    for (let len = 1; len <= s.length; len++) {
+      for (let i = 0; i <= s.length - len; i++) {
+        let substring = s.substring(i, i + len);
+        if (s.indexOf(substring, i + 1) !== -1 && substring.length > maxLength) {
+          maxLength = substring.length;
+          result = substring;
+        }
+      }
+    }
+  
+    return result;
+  }
+  
+  
+  const input = "banana";
+  console.log(longestDupSubstring(input)); // Outputs: "ana"
+  
