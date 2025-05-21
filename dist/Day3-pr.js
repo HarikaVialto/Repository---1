@@ -1,25 +1,24 @@
 "use strict";
-function integerToRoman(num) {
-    const romanValues = [
-        { value: 100, symbol: 'C' },
-        { value: 90, symbol: 'XC' },
-        { value: 50, symbol: 'L' },
-        { value: 40, symbol: 'XL' },
-        { value: 10, symbol: 'X' },
-        { value: 9, symbol: 'IX' },
-        { value: 5, symbol: 'V' },
-        { value: 4, symbol: 'IV' },
-        { value: 1, symbol: 'I' }
-    ];
-    let result = '';
-    for (const { value, symbol } of romanValues) {
-        while (num >= value) {
-            result += symbol;
-            num -= value;
+function reverseOnlyLetters(s) {
+    const isLetter = (char) => /[a-zA-Z]/.test(char);
+    // Convert string to an array for easier manipulation
+    const arr = s.split('');
+    let left = 0;
+    let right = arr.length - 1;
+    // Swap letters using two-pointer technique
+    while (left < right) {
+        if (!isLetter(arr[left])) {
+            left++;
+        }
+        else if (!isLetter(arr[right])) {
+            right--;
+        }
+        else {
+            [arr[left], arr[right]] = [arr[right], arr[left]];
+            left++;
+            right--;
         }
     }
-    return result;
+    // Convert array back to string and return
+    return arr.join('');
 }
-console.log(integerToRoman(58)); // Output: "LVIII"
-console.log(integerToRoman(19)); // Output: "XIX"
-console.log(integerToRoman(90)); // Output: "XC"
