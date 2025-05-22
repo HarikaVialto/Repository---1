@@ -22,3 +22,6 @@ function reverseOnlyLetters(s) {
     // Convert array back to string and return
     return arr.join('');
 }
+console.log(reverseOnlyLetters("ab-cd")); // Output: "dc-ba"
+console.log(reverseOnlyLetters("a-bC-dEf-ghIj")); // Output: "j-Ih-gfE-dCba"
+console.log(reverseOnlyLetters("Test1ng-Leet=code-Q!")); // Output: "Qedo1ct-eeLg=ntse-T!"
