@@ -13,7 +13,6 @@ function coinChange(coins: number[], amount: number): number {
     return dp[amount] === amount + 1 ? -1 : dp[amount];
 }
 
-// Test case
 const coins: number[] = [1, 2, 6];
 const amount: number = 12;
 
