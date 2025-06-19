@@ -36,7 +36,6 @@ function expressiveWords(S: string, words: string[]): number {
   return count;
 }
 
-// Example usage
 const S: string = "heeellloooo";
 const words: string[] = ["hello", "hi", "world"];
 console.log(expressiveWords(S, words)); // Output: 1
